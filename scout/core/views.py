@@ -110,7 +110,7 @@ def open_research(institute_id, case_id):
   mail.send(msg)
 
   link = url_for('.case', institute_id=institute_id, case_id=case_id)
-  store.open_research(institute, case, current_user, link)
+  store.open_research(institute, case_model, current_user, link)
 
   return redirect(url_for('.case', institute_id=institute_id, case_id=case_id))
 
@@ -259,8 +259,12 @@ def variants(institute_id, case_id, variant_type):
   # preprocess some of the results before submitting query to adapter
   process_filters_form(form)
 
+  # add variant type to query
+  query = dict(**form.data)
+  query['variant_type'] = variant_type
+
   # fetch list of variants
-  variant_models = store.variants(case_model.case_id, query=form.data,
+  variant_models = store.variants(case_model.case_id, query=query,
                                   nr_of_variants=per_page, skip=skip)
 
   return dict(variants=variant_models,
