@@ -78,8 +78,6 @@ class SvFiltersForm(FlaskForm):
     functional_annotations = SelectMultipleField(choices=FUNC_ANNOTATIONS)
     genetic_models = SelectMultipleField(choices=GENETIC_MODELS)
 
-    cadd_score = BetterDecimalField('CADD', places=2)
-    cadd_inclusive = BooleanField()
     clinsig = SelectMultipleField('CLINSIG', choices=CLINSIG_OPTIONS)
 
     chrom = TextField('Chromosome')
@@ -88,3 +86,5 @@ class SvFiltersForm(FlaskForm):
     svtype = SelectMultipleField('SVType', choices=SV_TYPE_CHOICES)
 
     thousand_genomes_frequency = BetterDecimalField('1000 Genomes', places=2)
+    ngi_frequency = BetterDecimalField('NGI', places=2)
+    swegen_frequency = BetterDecimalField('SweGen', places=2)

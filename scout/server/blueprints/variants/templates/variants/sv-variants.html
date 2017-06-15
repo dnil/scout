@@ -151,18 +151,25 @@
           {{ form.thousand_genomes_frequency.label(class="control-label") }}
           {{ form.thousand_genomes_frequency(class="form-control") }}
         </div>
-        <div class="col-xs-3">
+	<div class="col-xs-3">
+	  {{ form.swegen_frequency.label(class="control-label") }}
+          {{ form.swegen_frequency(class="form-control") }}
+        </div>
+	<div class="col-xs-3">
+	  {{ form.ngi_frequency.label(class="control-label") }}
+          {{ form.ngi_frequency(class="form-control") }}
         </div>
         <div class="col-xs-3">
-          {{ form.svtype.label(class="control-label") }}
-          {{ form.svtype(class="form-control") }}
         </div>
+
       </div>
     </div>
     <div class="form-group">
       <div class="row">
-	<div class="col-xs-3">
-	</div>
+        <div class="col-xs-3">
+          {{ form.svtype.label(class="control-label") }}
+          {{ form.svtype(class="form-control") }}
+        </div>
 	<div class="col-xs-3">
 	</div>
         <div class="col-xs-6">
